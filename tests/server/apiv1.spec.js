@@ -109,7 +109,7 @@
 
       assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
       assert(resMock.send.lastCall.args[0].city === 'hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
-      assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 75 F', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
+      assert(resMock.send.lastCall.args[0].weather === 'Conditions are clear and temperature is 75 F', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
     });
   });
 
