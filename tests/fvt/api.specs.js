@@ -29,7 +29,7 @@
           	} else {
               assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
-              assert((pbody.name === 'auckland'), "name does not match");
+              assert((pbody.name === 'Auckland'), "name does not match");
               done();
             }
         });
@@ -60,14 +60,14 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?name=wellingt'
+              url: appUrl + '/api/v1/getWeather?name=wellington'
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
           	} else {
               assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
-              assert(pbody.name === 'wellingt', "name does not match");
+              assert(pbody.name === 'Wellington', "name does not match");
               done();
             }
         });
