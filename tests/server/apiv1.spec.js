@@ -82,13 +82,13 @@
     it('with valid zip code', function() {
       reqMock = {
         query: {
-          name: 'christchurch'
+          name: 'hamilton'
         }
       };
 
       var body = {
         cod: 200,
-        name: 'christchuruch',
+        name: 'hamilton',
         weather: [
           {
             main: 'clear'
@@ -108,7 +108,7 @@
       apiv1.getWeather(reqMock, resMock);
 
       assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
-      assert(resMock.send.lastCall.args[0].city === 'christchurch', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
+      assert(resMock.send.lastCall.args[0].city === 'hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
       assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 35 C', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
     });
   });
