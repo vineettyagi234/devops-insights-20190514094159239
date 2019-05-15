@@ -3,8 +3,8 @@ var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 function initMap() {
 
-        var location = '/api/v1/getWeather?name=' + data;
-        var marker;
+        //var location = '/api/v1/getWeather?name=' + data;
+        //var marker;
 
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -12,6 +12,7 @@ function initMap() {
           zoom: 12
         });
 
+/*
         var i;
         for(i=0; i < location.lenght; i++){
             marker = new google.maps.Marker({
@@ -21,7 +22,7 @@ function initMap() {
             });
                  
         }
-
+*/
 }
 
     
