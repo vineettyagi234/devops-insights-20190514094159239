@@ -3,15 +3,12 @@ var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 function initMap() {
 
-        var lanlong = {lat:174.77, lng:36.85};
+        var lanlong = {lat:174.77, lng:-36.85};
         var map = new google.maps.Map(document.getElementById('map'),{zoom: 4, center:lanlong}); 
         var marker = new google.maps.marker({position:lanlong, map:map});                 
     }
 
-    function pointMap(lat, lon){
-        var marker = new google.maps.marker({position:{lat:lat, lng:lon}, map:map});
-        
-    }
+    
 
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
     function ($routeProvider, $locationProvider, $sceDelegateProvider, $httpProvider) {
