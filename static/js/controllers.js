@@ -25,7 +25,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
     $scope.zip1Weather = "";
 
 
-    var scr = document.createElement('script')
+    var scr = document.createElement('script');
     scr.setAttribute('src','https://maps.googleapis.com/maps/api/js?key=AIzaSyD7q_2vy-nMQAxHHGUcGpy1_hMZ29q8MmM&callback=initMap');
     scr.setAttribute('type', 'text/javascript');
     document.getElementById('map').appendChild(scr);
