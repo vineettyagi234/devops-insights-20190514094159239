@@ -1,28 +1,25 @@
 
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
+var map;
 function initMap() {
 
-        //var location = '/api/v1/getWeather?name=' + data;
-        //var marker;
+        
 
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(174.77, -36.85),
+        map = new google.maps.Map(document.getElementById('map'), {
+          center:{lat:-36.85, lng:174.77),
           zoom: 12
         });
+    
+}
 
-/*
-        var i;
-        for(i=0; i < location.lenght; i++){
-            marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(location[i][1] , location[i][2]),
-                    map: map,
+function point(lat, lon){
+    
 
-            });
-                 
-        }
-*/
+        marker = new google.maps.Marker({
+            position: new google.maps.Latlng(lat, lon),
+            map : map
+        });
 }
 
     
@@ -81,6 +78,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                     $scope.zip4City = response.data.city;
                     $scope.zip4Weather = response.data.weather;
                 } 
+                point(response.data.lat, response.data.lng);
             });
         
     };
