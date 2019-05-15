@@ -2,10 +2,12 @@
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
+        
+
+        var ulruru = {lat: -25.344, lng: 131.036};
+        var map = new google.maps.Map(document.getElementById('map'),{zoom: 4, center: uluru}); 
+        var marker = new google.maps.Marker({position: uluru, map: map}); 
+              
     }
 
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
@@ -29,6 +31,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
     scr.setAttribute('src','https://maps.googleapis.com/maps/api/js?key=AIzaSyD7q_2vy-nMQAxHHGUcGpy1_hMZ29q8MmM&callback=initMap');
     scr.setAttribute('type', 'text/javascript');
     document.getElementById('map').appendChild(scr);
+
 
     $scope.zip = function(which) {
 
