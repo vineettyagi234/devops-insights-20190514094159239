@@ -3,9 +3,9 @@ var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 function initMap() {
 
-        var map = new google.maps.Map(document.getElementById('map'),{zoom: 4, center: {lat:174.77, lng:-36.85}}); 
-        pointMap(174.77,-36.85); 
-              
+        var lanlong = {lat:174.77, lng:36.85}
+        var map = new google.maps.Map(document.getElementById('map'),{zoom: 4, center:lanlong}); 
+        var marker = new google.maps.marker({position:lanlong, map:map});                 
     }
 
     function pointMap(lat, lon){
