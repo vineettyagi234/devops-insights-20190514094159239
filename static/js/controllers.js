@@ -10,7 +10,7 @@ function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(174.77, -36.85),
           zoom: 12
-      });
+        });
 
         var i;
         for(i=0; i < location.lenght; i++){
@@ -19,12 +19,8 @@ function initMap() {
                     map:map,
 
             });
-
-            
-            
+                 
         }
-
-
 
 }
 
@@ -48,7 +44,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
 
 
     var scr = document.createElement('script');
-    scr.setAttribute('src','https://maps.googleapis.com/maps/api/js?key=&callback=initMap');
+    scr.setAttribute('src','https://maps.googleapis.com/maps/api/js?key=AIzaSyD7q_2vy-nMQAxHHGUcGpy1_hMZ29q8MmM&callback=initMap');
     scr.setAttribute('type', 'text/javascript');
     document.getElementById('map').appendChild(scr);
 
