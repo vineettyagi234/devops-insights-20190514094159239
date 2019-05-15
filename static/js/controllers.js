@@ -6,12 +6,8 @@ function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(174.77, -36.85),
           zoom: 12
-      }
-
-
-
-    );
-
+      });
+}
 
     
 
