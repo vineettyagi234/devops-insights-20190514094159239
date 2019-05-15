@@ -3,8 +3,7 @@ var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 function initMap() {
 
-        var ulruru = {lat: lat, lng: lon};
-        var map = new google.maps.Map(document.getElementById('map'),{zoom: 4, center: uluru}); 
+        var map = new google.maps.Map(document.getElementById('map'),{zoom: 4, center: {lat:174.77, lng:-36.85}}); 
         pointMap(174.77,-36.85); 
               
     }
