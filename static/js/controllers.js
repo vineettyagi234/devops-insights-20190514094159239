@@ -30,7 +30,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
             data = $scope.zip4m;
         } 
 
-        if(data.length === 5) {
+        
             $http({
                 method: "GET",
                 url: '/api/v1/getWeather?name=' + data
@@ -49,21 +49,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                     $scope.zip4Weather = response.data.weather;
                 } 
             });
-        } else {
-            if(which === 1) {
-                    $scope.zip1City = "";
-                    $scope.zip1Weather = "";
-                } else if(which === 2) {
-                    $scope.zip2City = "";
-                    $scope.zip2Weather = "";
-                } else if(which === 3) {
-                    $scope.zip3City = "";
-                    $scope.zip3Weather = "";
-                } else if(which === 4) {
-                    $scope.zip4City = "";
-                    $scope.zip4Weather = "";
-                } 
-        }
+        
     };
     
 }]);
