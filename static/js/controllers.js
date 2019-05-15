@@ -3,10 +3,11 @@ var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 function initMap() {
 
-        var lanlong = {lat:174.77, lng:-36.85};
-        var map = new google.maps.Map(document.getElementById('map'),{zoom: 4, center:lanlong}); 
-        var marker = new google.maps.marker({position:lanlong, map:map});                 
-    }
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(174.77, -36.85),
+          zoom: 12
+
+    });
 
     
 
