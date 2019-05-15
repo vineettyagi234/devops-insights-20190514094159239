@@ -2,12 +2,16 @@
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 function initMap() {
-        
 
-        var ulruru = {lat: -25.344, lng: 131.036};
+        var ulruru = {lat: lat, lng: lon};
         var map = new google.maps.Map(document.getElementById('map'),{zoom: 4, center: uluru}); 
-        var marker = new google.maps.Marker({position: uluru, map: map}); 
+        pointMap(174.77,-36.85); 
               
+    }
+
+    function pointMap(lat, lon){
+        var marker = new google.maps.marker({position:{lat:lat, lng:lon},map:map});
+        
     }
 
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
