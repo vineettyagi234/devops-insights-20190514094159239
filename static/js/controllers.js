@@ -1,6 +1,13 @@
 
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
+function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+    }
+
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
     function ($routeProvider, $locationProvider, $sceDelegateProvider, $httpProvider) {
     $routeProvider.when('/', {
@@ -16,6 +23,12 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
     $scope.somemessage = "Some weather";
     $scope.zip1City = "";
     $scope.zip1Weather = "";
+
+
+    var scr = document.createElement('script')
+    scr.setAttribute('src','https://maps.googleapis.com/maps/api/js?key=AIzaSyD7q_2vy-nMQAxHHGUcGpy1_hMZ29q8MmM&callback=initMap');
+    scr.setAttribute('type', 'text/javascript');
+    document.getElementById('map').appendChild(scr);
 
     $scope.zip = function(which) {
 
