@@ -8,7 +8,7 @@ function initMap() {
           zoom: 12
       }
 
-    }
+    };
     
 
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
