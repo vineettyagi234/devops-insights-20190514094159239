@@ -7,10 +7,7 @@ function initMap() {
           center: new google.maps.LatLng(174.77, -36.85),
           zoom: 12
 
-    }
-function (date){
-
-}
+    };
     
 
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
