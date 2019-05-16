@@ -48,7 +48,7 @@ exports.getWeather2 = function(req, res) {
     var lng = req.query.lon;
 
 	if( (lat === null) || (typeof(lat) === 'undefined') || (lng === null)  || (typeof(lng) === 'undefined') ) {
-		return res.status(400).send('coord missing');
+		return res.status(400).send({msg:'Failed'});
 	}
 
 	var aurl = OPENWEATHERURL + '&lat=' + lat + '&lon' + lng;
