@@ -134,11 +134,11 @@
       assert(resMock.status.lastCall.calledWith(400), 'Unexpected status code:' + resMock.status.lastCall.args);
     });
 
-    it('with valid lat, lng and error from request call', function() {
+    it('with valid lat, lon and error from request call', function() {
       reqMock = {
         query: {
           lat:32.3,
-          lng:-64.78
+          lon:-64.78
         }
       };
 
@@ -154,7 +154,7 @@
       assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
     });
 
-    it('with incomplete lat, lng', function() {
+    it('with incomplete lat, lon', function() {
       reqMock = {
         query: {
           lat: 32.3
@@ -173,11 +173,11 @@
       assert(resMock.send.lastCall.args[0].msg === 'Failed', 'Unexpected response:' + resMock.send.lastCall.args);
     });
 
-    it('with valid lat, lng', function() {
+    it('with valid lat, lon', function() {
       reqMock = {
         query: {
           lat:-36.85,
-          lng: 
+          lon: 174.77
         }
       };
 
