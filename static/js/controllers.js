@@ -31,7 +31,7 @@ function point(lat, lon){
 
 
     
-onsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
+ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
     function ($routeProvider, $locationProvider, $sceDelegateProvider, $httpProvider) {
     $routeProvider.when('/', {
         templateUrl: '/partials/Byzip.html',
