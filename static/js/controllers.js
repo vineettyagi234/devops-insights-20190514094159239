@@ -12,7 +12,7 @@ function initMap() {
           zoom: 8
         });
 
-            map.addListener('click', '$http' function(tik, $http) {
+            map.addListener('click', '$http' ,function(tik, $http) {
             
                 $http({
                 method: "GET",
