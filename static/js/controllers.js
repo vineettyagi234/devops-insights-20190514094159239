@@ -2,6 +2,8 @@
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 
+var cityName = document.getElementById('zip1City');
+var weatherDetail = document.getElementById('zip1Weather');
 
 var map;
 var markers = [];
@@ -20,8 +22,8 @@ function initMap() {
             var xhttp = new XMLHttpRequest();
 
             xhttp.onload = function(){
-                var ourData = JSON.parse(ourRequest.response.data);
-                document.getElementById("zip1City").innerHTML = ourData.city;
+                var ourData = JSON.parse(xhttp.response.data);
+                document.getElementById("demo").innerHTML = ourData.city;
                 document.getElementById("zip1Weather").innerHTML = ourData.weather;
 
                 point(response.data.lat, response.data.lng);
