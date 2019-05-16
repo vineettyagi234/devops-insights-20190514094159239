@@ -34,7 +34,7 @@ function initMap() {
 }
 
             var cityName = document.getElementById('zip1City');
-            vat weatherDetail = document.getElementById('zip1Weather');
+            var weatherDetail = document.getElementById('zip1Weather');
             var click = document.getElementById('map');
 
             click.addListener('click', function(){
