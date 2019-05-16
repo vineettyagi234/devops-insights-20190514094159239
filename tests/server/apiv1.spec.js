@@ -173,6 +173,27 @@
       assert(resMock.send.lastCall.args[0].msg === 'Failed', 'Unexpected response:' + resMock.send.lastCall.args);
     });
 
+
+    it('with  incomplete lon, lat', function() {
+      reqMock = {
+        query: {
+          lon: -64.78
+        }
+      };
+
+      var request = function( obj, callback ){
+        callback(null, null, {});
+      };
+
+      apiv1.__set__("request", request);
+
+      apiv1.getWeather2(reqMock, resMock);
+
+      assert(resMock.status.lastCall.calledWith(400), 'Unexpected response:' + resMock.status.lastCall.args);
+      assert(resMock.send.lastCall.args[0].msg === 'Failed', 'Unexpected response:' + resMock.send.lastCall.args);
+    });
+
+
     it('with valid lat, lon', function() {
       reqMock = {
         query: {
