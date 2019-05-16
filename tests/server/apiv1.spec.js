@@ -204,7 +204,8 @@
 
       var body = {
         cod: 200,
-        name: 'hamilton',
+        lat: 43.26,
+        lon: -79.87,
         weather: [
           {
             main: 'clear'
