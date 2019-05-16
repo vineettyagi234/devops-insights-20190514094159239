@@ -12,6 +12,9 @@ function initMap() {
           zoom: 8
         });
 
+
+
+/
             map.addListener('click', '$http' ,function(tik, $http) {
             
                 $http({
@@ -26,8 +29,34 @@ function initMap() {
             });
 
         });
+    */
     
 }
+
+            var cityName = document.getElementById('zip1City');
+            vat weatherDetail = document.getElementById('zip1Weather');
+            var click = document.getElementById('map');
+
+            click.addListener('click', function(){
+
+            var xhttp = new XMLHttpRequest();
+
+            ourRequest.onload = function(){
+                var ourData = JSON.parse(ourRequest.response.data);
+                cityName = ourData.city;
+                weatherDetail = ourData.weather;
+
+            }
+            xhttp.open("GET", "/api/v1/getWeather?", true);
+            xhttp.send();
+            });
+
+
+
+
+
+
+
 
 function point(lat, lon){
     

@@ -178,7 +178,7 @@
     it('with  incomplete lon, lat', function() {
       reqMock = {
         query: {
-          lon: -64.78,
+          lon: -64.78,  
           lat:0
         }
       };
