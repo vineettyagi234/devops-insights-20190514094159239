@@ -47,7 +47,7 @@ exports.getWeather2 = function(req, res) {
 	var lat = req.query.lat;
     var lng = req.query.lon;
 
-	if( (lat === null) || (typeof(lat) === 'undefined') || (lng ==== null)  || (typeof(lng) === 'undefined') ) {
+	if( (lat === null) || (typeof(lat) === 'undefined') || (lng === null)  || (typeof(lng) === 'undefined') ) {
 		return res.status(400).send('zip missing');
 	}
 
