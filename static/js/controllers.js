@@ -2,6 +2,7 @@
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 var map;
+var markers = [];
 function initMap() {
 
         
@@ -13,14 +14,24 @@ function initMap() {
     
 }
 
+
+
 function point(lat, lon){
     
 
         marker = new google.maps.Marker({
-            position: new google.maps.Latlng(lat, lon),
+            position: {lat:parseFloat(lat), lng:parseFloat(lon)},
             map : map
         });
+        markers.push(marker);
 }
+
+function setMapOnAll() {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(null);
+        }
+      }
+
 
     
 
