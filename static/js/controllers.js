@@ -46,7 +46,8 @@ function initMap() {
                 cityName = ourData.city;
                 weatherDetail = ourData.weather;
 
-            }
+            };
+
             xhttp.open("GET", "/api/v1/getWeather?", true);
             xhttp.send();
             });
