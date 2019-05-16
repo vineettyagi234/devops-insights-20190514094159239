@@ -170,7 +170,7 @@
       apiv1.getWeather2(reqMock, resMock);
 
       assert(resMock.status.lastCall.calledWith(400), 'Unexpected response:' + resMock.status.lastCall.args);
-      assert(resMock.send.lastCall.args[0].msg === 'Failed', 'Unexpected response:' + resMock.send.lastCall.args);
+      assert(resMock.send.lastCall.args[0].msg === 'coord missing', 'Unexpected response:' + resMock.send.lastCall.args);
     });
 
     it('with valid lat, lon', function() {
