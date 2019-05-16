@@ -3,39 +3,35 @@ var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
 var map;
 var markers = [];
+
+
 function initMap() {
 
-        
-
-        map = new google.maps.Map(document.getElementById('map'), {
+           map = new google.maps.Map(document.getElementById('map'), {
           center:{lat:-36.85, lng:174.77},
           zoom: 8
         });
     
 }
 
-
-
 function point(lat, lon){
     
-
         marker = new google.maps.Marker({
             position: {lat:parseFloat(lat), lng:parseFloat(lon)},
             map : map
         });
+
+        if(marker.length >4){
+            markers.shift().setMap(null);
+        }
         markers.push(marker);
 }
 
-function setMapOnAll() {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(null);
-        }
-      }
+     
 
 
     
-
-ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
+onsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
     function ($routeProvider, $locationProvider, $sceDelegateProvider, $httpProvider) {
     $routeProvider.when('/', {
         templateUrl: '/partials/Byzip.html',
