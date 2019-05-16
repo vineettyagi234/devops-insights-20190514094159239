@@ -14,7 +14,7 @@ function initMap() {
 
 
 
-/
+/*
             map.addListener('click', '$http' ,function(tik, $http) {
             
                 $http({
