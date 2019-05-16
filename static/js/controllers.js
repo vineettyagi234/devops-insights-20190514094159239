@@ -22,15 +22,20 @@ function initMap() {
             var xhttp = new XMLHttpRequest();
 
             xhttp.onload = function(){
-                var ourData = JSON.parse(xhttp.response.data);
-                document.getElementById("demo").innerHTML = ourData.city;
-                document.getElementById("zip1Weather").innerHTML = ourData.weather;
+                var res = JSON.parse(this.responseText);
+                
+                var lat = res.coord.lat;
+                var lng = res.coord.lon;
+                var cityName = res.name;
+                var weather = res.weather.main;
+                document.getElementById("zip1City").innerHTML = res.name;
+                document.getElementById("zip1Weather").innerHTML = res.weather;
 
                 point(response.data.lat, response.data.lng);
 
             };
 
-            xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.latLng.lat() +'&lon=' + tik.latLng.lon()", true);
+            xhttp.open("GET", "/api/v1/getWeather?lat=" + lat + "&lon=" + lng + "&name" + cityName, true);
             xhttp.send();
             });
 
