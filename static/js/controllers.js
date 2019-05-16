@@ -16,7 +16,7 @@ function initMap() {
             
                 $http({
                 method: "GET",
-                url: '/api/v1/getWeather?lat=' + tik.latLng.lat() +'&lon=' + tik.latLng.lon();
+                url: '/api/v1/getWeather?lat=' + tik.latLng.lat() +'&lon=' + tik.latLng.lon()
             }).then( function(response) {
                 if(which === 1) {
                     $scope.zip1City = response.data.city;
