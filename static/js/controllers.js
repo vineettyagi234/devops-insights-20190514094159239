@@ -1,6 +1,8 @@
 
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
+
+
 var map;
 var markers = [];
 
@@ -12,7 +14,23 @@ function initMap() {
           zoom: 8
         });
 
+            
+            map.addListener('click', function(tik){
 
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function(){
+                var ourData = JSON.parse(ourRequest.response.data);
+                document.getElementById("zip1City").innerHTML = ourData.city;
+                document.getElementById("zip1Weather").innerHTML = ourData.weather;
+
+                point(response.data.lat, response.data.lng);
+
+            };
+
+            xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.latLng.lat() +'&lon=' + tik.latLng.lon()", true);
+            xhttp.send();
+            });
 
 /*
             map.addListener('click', '$http' ,function(tik, $http) {
@@ -33,24 +51,7 @@ function initMap() {
     
 }
 
-            var cityName = document.getElementById('zip1City');
-            var weatherDetail = document.getElementById('zip1Weather');
-            var click = document.getElementById('map');
-
-            click.addListener('click', function(){
-
-            var xhttp = new XMLHttpRequest();
-
-            ourRequest.onload = function(){
-                var ourData = JSON.parse(ourRequest.response.data);
-                cityName = ourData.city;
-                weatherDetail = ourData.weather;
-
-            };
-
-            xhttp.open("GET", "/api/v1/getWeather?", true);
-            xhttp.send();
-            });
+            
 
 
 
