@@ -157,7 +157,8 @@
     it('with incomplete lat, lon', function() {
       reqMock = {
         query: {
-          lat: 32.3
+          lat: 32.3,
+          lon: 0
         }
       };
 
@@ -177,7 +178,8 @@
     it('with  incomplete lon, lat', function() {
       reqMock = {
         query: {
-          lon: -64.78
+          lon: -64.78,
+          lat:0
         }
       };
 
@@ -204,8 +206,8 @@
 
       var body = {
         cod: 200,
-        lat: 43.26,
-        lon: -79.87,
+        name:'hamilton',
+
         weather: [
           {
             main: 'clear'
