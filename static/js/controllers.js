@@ -21,7 +21,7 @@ function initMap() {
             
             map.addListener('click', function(tik){
 
-                    var xhttp = new XMLHttpRequest();
+            var xhttp = new XMLHttpRequest();
 
             xhttp.onload = function(){
                 if(this.onload ==4 && this.onload ==200){
@@ -42,7 +42,7 @@ function initMap() {
             xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.lat() +'&lon=' + tik.lon()", true);
             xhttp.send();
 
-            });
+        });
 
             
 
