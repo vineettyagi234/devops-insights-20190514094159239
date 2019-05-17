@@ -37,7 +37,7 @@ function initMap() {
 
                 }
                 
-            }
+            };
 
             xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.lat() +'&lon=' + tik.lon()", true);
             xhttp.send();
