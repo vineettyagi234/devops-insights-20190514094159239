@@ -51,7 +51,7 @@ exports.getWeather2 = function(req, res) {
 		return res.status(400).send({msg:'Failed'});
 	}
 
-	var aurl = OPENWEATHERURL + '&lat=' + lat + '&lon' + lng;
+	var aurl = OPENWEATHERURL + '&lat=' + lat + '&lon=' + lng;
 	request({
 		method: 'GET',
         url: aurl,
