@@ -19,9 +19,9 @@ function initMap() {
         });
 
             
-            map.addListener('click', function(tik));
+            map.addListener('click', function(tik){
 
-            var xhttp = new XMLHttpRequest();
+                    var xhttp = new XMLHttpRequest();
 
             xhttp.onload = function(){
                 if(this.onload ==4 && this.onload ==200){
@@ -42,36 +42,12 @@ function initMap() {
             xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.lat() +'&lon=' + tik.lon()", true);
             xhttp.send();
 
-};
-
-            
-/*
-            map.addListener('click', '$http' ,function(tik, $http) {
-            
-                $http({
-                method: "GET",
-                url: '/api/v1/getWeather?lat=' + tik.latLng.lat() +'&lon=' + tik.latLng.lon()
-            }).then( function(response) {
-            
-                    $scope.zip1City = response.data.city;
-                    $scope.zip1Weather = response.data.weather;
-
-                point(response.data.lat, response.data.lng);
             });
 
-        });
-    */
-    
-
-
             
 
-
-
-
-
-
-
+};
+ 
 
 function point(lat, lon){
 
