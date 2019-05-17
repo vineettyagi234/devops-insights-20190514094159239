@@ -24,27 +24,23 @@ function initMap() {
             var xhttp = new XMLHttpRequest();
 
             xhttp.onload = function(){
+
                 if(this.onload ==4 && this.onload ==200){
 
+                var ourData = JSON.parse(ourRequest.response.data);
+                document.getElementById("zip1City").innerHTML = ourData.city;
+                document.getElementById("zip1Weather").innerHTML = ourData.weather;
 
-                var res = JSON.parse(xhttp.responseText);
-
-                 cityName = res.city;
-                 weatherDetail = res.weather;
-
-                point(res.lat, res.lng);
-
-
+                point(response.data.lat, response.data.lng);
+    
                 }
                 
             };
 
-            xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.lat() +'&lon=' + tik.lon()", true);
+            xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.latLng.lat() +'&lon=' + tik.latLng.lon()", true);
             xhttp.send();
 
-        });
-
-            
+            });           
 
 }
  
