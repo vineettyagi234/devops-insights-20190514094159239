@@ -23,11 +23,11 @@ function initMap() {
             xhttp.onload = function(){
 
                 console.log(xhttp.response);
-                var ourData = JSON.parse(xhttp.response.data);
+                var ourData = JSON.parse(xhttp.response);
                 document.getElementById("zip1city").innerHTML = ourData.city;
                 document.getElementById("zip1weather").innerHTML = ourData.weather;
 
-                point(response.data.lat, response.data.lng);
+                point(ourData.lat, ourData.lng);
     
                 
             };
