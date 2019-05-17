@@ -19,7 +19,7 @@ function initMap() {
         });
 
             
-            map.addListener('click', function(tik);
+            map.addListener('click', function(tik));
 
             var xhttp = new XMLHttpRequest();
 
