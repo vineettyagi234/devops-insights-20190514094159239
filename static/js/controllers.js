@@ -32,7 +32,7 @@ function initMap() {
                 
             };
 
-            xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.latLng.lat() +'&lon=' + tik.latLng.lon()", true);
+            xhttp.open("GET", "/api/v1/getWeather2?lat=" + tik.latLng.lat() +'&lon=' + tik.latLng.lng(), true);
             xhttp.send();
 
             });           

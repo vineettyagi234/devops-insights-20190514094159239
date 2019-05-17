@@ -66,7 +66,7 @@ exports.getWeather2 = function(req, res) {
     			var response = {city: body.name, weather: weath, lat:body.coord.lat, lng: body.coord.lon};
     			return res.status(200).send(response);
     		} else {
-                return res.status(400).send({msg:'Failed'});
+                return res.status(400).send({msg:'Fail to connect'});
             }
     	}
     });
