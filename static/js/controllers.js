@@ -49,7 +49,7 @@ function point(lat, lon){
             map : map
         });
 
-        if(markers.length >4){
+        if(markers.length >3){
             markers.shift().setMap(null);
         }
         markers.push(marker);
