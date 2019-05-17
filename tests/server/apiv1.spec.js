@@ -192,7 +192,7 @@
       apiv1.getWeather2(reqMock, resMock);
 
       assert(resMock.status.lastCall.calledWith(400), 'Unexpected response:' + resMock.status.lastCall.args);
-      assert(resMock.send.lastCall.args[0].msg === 'Failed', 'Unexpected response:' + resMock.send.lastCall.args);
+      assert(resMock.send.lastCall.args[0].msg === 'Fail to connect', 'Unexpected response:' + resMock.send.lastCall.args);
     });
 
 
