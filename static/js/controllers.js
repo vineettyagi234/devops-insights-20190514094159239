@@ -8,6 +8,8 @@ var weatherDetail = document.getElementById('zip1Weather');
 var map;
 var markers = [];
 
+var cityName = ocument.getElementById("zip1City").innerHTML;
+var weatherDetail = document.getElementById("zip1Weather").innerHTML;
 
 function initMap() {
 
@@ -17,22 +19,32 @@ function initMap() {
         });
 
             
-            map.addListener('click', function(tik){
+            map.addListener('click', function(tik);
 
             var xhttp = new XMLHttpRequest();
 
             xhttp.onload = function(){
-                var ourData = JSON.parse(xhttp.response.data);
-                document.getElementById("zip1City").innerHTML = ourData.city;
-                document.getElementById("zip1Weather").innerHTML = ourData.weather;
+                if(this.onload ==4 && this.onload ==200){
 
-                point(ourData.lat, ourData.lng);
 
-            };
+                var res = JSON.parse(xhttp.responseText);
 
-            xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.latLng.lat() +'&lon=' + tik.latLng.lon()", true);
+                 cityName = res.city;
+                 weatherDetail = res.weather;
+
+                point(res.lat, res.lng);
+
+
+                }
+                
+            }
+
+            xhttp.open("GET", "/api/v1/getWeather?lat=' + tik.lat() +'&lon=' + tik.lon()", true);
             xhttp.send();
-            });
+
+};
+
+            
 /*
             map.addListener('click', '$http' ,function(tik, $http) {
             
@@ -50,7 +62,7 @@ function initMap() {
         });
     */
     
-}
+
 
             
 
@@ -62,7 +74,9 @@ function initMap() {
 
 
 function point(lat, lon){
+
     
+
         marker = new google.maps.Marker({
             position: {lat:parseFloat(lat), lng:parseFloat(lon)},
             map : map
