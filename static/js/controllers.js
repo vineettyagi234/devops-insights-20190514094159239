@@ -46,7 +46,7 @@ function initMap() {
 
             
 
-};
+}
  
 
 function point(lat, lon){
