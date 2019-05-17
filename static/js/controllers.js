@@ -8,9 +8,6 @@ var weatherDetail = document.getElementById('zip1Weather');
 var map;
 var markers = [];
 
-var cityName = ocument.getElementById("zip1City").innerHTML;
-var weatherDetail = document.getElementById("zip1Weather").innerHTML;
-
 function initMap() {
 
            map = new google.maps.Map(document.getElementById('map'), {
@@ -25,15 +22,13 @@ function initMap() {
 
             xhttp.onload = function(){
 
-                if(this.onload ==4 && this.onload ==200){
-
-                var ourData = JSON.parse(ourRequest.response.data);
-                document.getElementById("zip1City").innerHTML = ourData.city;
-                document.getElementById("zip1Weather").innerHTML = ourData.weather;
+                console.log(xhttp.response);
+                var ourData = JSON.parse(xhttp.response.data);
+                document.getElementById("zip1city").innerHTML = ourData.city;
+                document.getElementById("zip1weather").innerHTML = ourData.weather;
 
                 point(response.data.lat, response.data.lng);
     
-                }
                 
             };
 
