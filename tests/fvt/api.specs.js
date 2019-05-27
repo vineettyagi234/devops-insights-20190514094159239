@@ -1,4 +1,4 @@
-
+// just adding a comment to app going
 (function () {
 
     'use strict';
