@@ -1,4 +1,5 @@
 // just adding a comment to app going
+// add one more comment to keep app alive
 (function () {
 
     'use strict';
